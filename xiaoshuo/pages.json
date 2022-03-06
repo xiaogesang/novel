@@ -1,0 +1,270 @@
+{	
+	"easycom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		},
+	
+	"pages": [
+
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/novel/book_info",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/novel/book_cont",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/user_comment",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/novel/history_comment",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/novel/book_title",
+			"style": {
+				"navigationBarTitleText": "目录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "用户登录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/center",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/novel/novel_list",
+			"style": {
+				"navigationBarTitleText": "全部小说",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/user_cover",
+			"style": {
+				"navigationBarTitleText": "我的书架",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/user_info",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/user/update",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/feedback",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/rank",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "排行榜",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/complete",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "已完结",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/new_book",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/onlineRank",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "小说热搜榜",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/onBookDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "在线小说详情",
+                "enablePullDownRefresh": false,
+				"navigationBarTextStyle":"black",
+				"navigationBarBackgroundColor":"#FFFFFF"
+				
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/onLineRead/onLineRead",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/noveltype",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "小说分类",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/onLineSearch/onLineSearch",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "在线小说搜索",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"navigationBarTextStyle":"black"
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/onLineGood/onLineGood",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "小说好评榜",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/history",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的历史记录",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ffffff",
+				"navigationBarTextStyle":"black"
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/backOnlineDetail/backOnlineDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ffffff",
+				"navigationBarTextStyle":"black"
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/novel/onLineRead/onLineReadBack",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+            
+        }
+    ],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#1296DB",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				// "iconPath": "static/icon/home.png",
+				// "selectedIconPath": "static/icon/home_red.png",
+				"text": "首页"
+			}, {
+				"pagePath": "pages/novel/novel_list",
+				// "iconPath": "static/icon/list.png",
+				// "selectedIconPath": "static/icon/list_red.png",
+				"text": "小说"
+			},
+			{
+				"pagePath": "pages/user/center",
+				// "iconPath": "static/icon/user.png",
+				// "selectedIconPath": "static/icon/user-red.png",
+				"text": "我的"
+			}
+		]
+	},
+
+	"globalStyle": {
+		"navigationBarTitleText": "七点小说"
+		
+	}
+}

@@ -1,0 +1,2 @@
+1、图片来源： uni-icons标签包裹的是uniapp的图标插件。其他图标文件来源于阿里巴巴矢量图标库(https://www.iconfont.cn/)。
+2、图片等主题颜色：#ed424b

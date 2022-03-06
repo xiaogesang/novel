@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    color:unset;
+    text-decoration:none;
+}
+ul,ol{
+    list-style-type:none;
+}
+.vue_body{
+	padding: 10px;
+	background: #f5f5f5;
+}
+#ClCache{
+	display: none;
+}

@@ -1,0 +1,59 @@
+{extend name="layout"}
+{block name="title"}
+章节列表
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+        <form action="" method="get">
+            <ul class="search" style="padding-left:10px;">
+                <li><a class="button border-main icon-plus-square-o" href="{:url('admin/novel/add_note',['id'=>$data['id']])}"> 添加章节</a></li>
+                <li><a class="button border-main icon-plus-square-o" href="{:url('admin/novel/upload_book',['id'=>$data['id']])}"> 批量添加</a></li>
+                <li>搜索：</li>
+                <li>
+                    <input type="text" placeholder="请输入章节名称关键字" name="keywords" value="{$keywords}" class="input" style="width:250px; line-height:17px;display:inline-block"/>
+                    <button class="button border-main icon-search"> 搜索</button></li>
+            </ul>
+        </form>
+    </div>
+    <table class="table table-hover text-center">
+        <tr>
+            <th>名称</th>
+            <th>章节简介</th>
+            <th width="10%">更新时间</th>
+            <th width="310">操作</th>
+        </tr>
+        {foreach $lists as $key=>$val}
+        <tr>
+            <td>{$val['title']}</td>
+            <td>{$val['intro']}</td>
+            <td>{$val['add_time']}</td>
+            <td>
+                <div class="button-group">
+                    <a class="button border-main" href="{:url('admin/novel/update_note',['id'=>$val['id']])}"><span class="icon-edit"></span> 修改</a>
+                    <a class="button border-red del" data-url="{:url('admin/novel/delete_note',['id'=>$val['id']])}" href="javascript:void(0)"><span class="icon-trash-o"></span> 删除</a>
+                </div>
+            </td>
+        </tr>
+        {/foreach}
+        <tr>
+            <td colspan="8">
+                {$lists->render()}
+            </td>
+        </tr>
+    </table>
+</div>
+{/block}
+{block name="js"}
+<script>
+    $(function(){
+        $('a.del').on('click',function(){
+            if (confirm('确认删除？')==true){
+                var url = $(this).data('url');
+                location = url;
+            }
+        });
+    })
+</script>
+{/block}

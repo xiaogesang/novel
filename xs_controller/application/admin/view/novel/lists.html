@@ -1,0 +1,98 @@
+{extend name="layout"}
+{block name="title"}
+小说列表
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+        <ul class="search" style="padding-left:10px;">
+            <li><a class="button border-main icon-plus-square-o" href="{:url('admin/novel/add')}"> 添加内容</a></li>
+            <!--<li>搜索：</li>-->
+            <!--<li>首页-->
+            <!--<select name="s_ishome" class="input" onchange="changesearch()" style="width:60px; line-height:17px; display:inline-block">-->
+            <!--<option value="">选择</option>-->
+            <!--<option value="1">是</option>-->
+            <!--<option value="0">否</option>-->
+            <!--</select>-->
+            <!--&nbsp;&nbsp;-->
+            <!--推荐-->
+            <!--<select name="s_isvouch" class="input" onchange="changesearch()" style="width:60px; line-height:17px;display:inline-block">-->
+            <!--<option value="">选择</option>-->
+            <!--<option value="1">是</option>-->
+            <!--<option value="0">否</option>-->
+            <!--</select>-->
+            <!--&nbsp;&nbsp;-->
+            <!--置顶-->
+            <!--<select name="s_istop" class="input" onchange="changesearch()" style="width:60px; line-height:17px;display:inline-block">-->
+            <!--<option value="">选择</option>-->
+            <!--<option value="1">是</option>-->
+            <!--<option value="0">否</option>-->
+            <!--</select>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<select name="cid" class="input" style="width:200px; line-height:17px;" onchange="changesearch()">-->
+            <!--<option value="">请选择分类</option>-->
+            <!--<option value="">产品分类</option>-->
+            <!--<option value="">产品分类</option>-->
+            <!--<option value="">产品分类</option>-->
+            <!--<option value="">产品分类</option>-->
+            <!--</select>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<input type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block"/>-->
+            <!--<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a></li>-->
+        </ul>
+    </div>
+    <table class="table table-hover text-center">
+        <tr>
+            <th width="10%">排序</th>
+            <th>图片</th>
+            <th>名称</th>
+            <th>属性</th>
+            <th>连载</th>
+            <th>关键字</th>
+            <th>评分</th>
+            <th width="10%">更新时间</th>
+            <th width="310">操作</th>
+        </tr>
+        {foreach $lists as $key=>$val}
+        <tr>
+            <td><input type="text" name="sort[1]" value="{$val['id']}" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;"/></td>
+            <td width="10%"><img src="{$val['cover']}" alt="" width="70"/></td>
+            <td>{$val['title']}</td>
+            <td><font color="#00CC99">{$val['types']}</font></td>
+            <td>{if $val['novel_status']==1}连载中{else}已完结{/if}</td>
+            <td>{$val['tags']}</td>
+            <td>{$val['point']}</td>
+            <td>{$val['add_time']}</td>
+            <td>
+                <div class="button-group">
+                    <a class="button border-main" href="{:url('admin/novel/update',['id'=>$val['id']])}">修改信息</a>
+                    <a class="button border-main" href="{:url('admin/novel/novel_list',['id'=>$val['id']])}">章节列表</a>
+                    <a class="button border-red downs" href="javascript:void(0)"  data-url="{:url('admin/novel/status',['id'=>$val['id']])}">{if $val['status']==1}下架{else}上架{/if}</a>
+                </div>
+            </td>
+        </tr>
+        {/foreach}
+        <tr>
+            <td colspan="8">
+                {$lists->render()}
+            </td>
+        </tr>
+    </table>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    $(function(){
+        $('a.downs').on('click',function(){
+            var text = $(this).text();
+            if (confirm('确认'+text+'？')==true) {
+                var url = $(this).data('url');
+                location = url;
+            }
+        });
+    })
+</script>
+{/block}

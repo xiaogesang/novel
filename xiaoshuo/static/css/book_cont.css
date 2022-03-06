@@ -1,0 +1,33 @@
+.body{
+	padding: 10px;
+	overflow: hidden;
+	background: #f0f0f0;
+	min-height: calc(100vh - 20px - 44px);
+}
+.book_body{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.title{
+	line-height: 3rem;
+	text-align: center;
+	width: 100%;
+}
+.controller{
+	overflow: hidden;
+	width: 80%;
+	padding: 10px;
+	border-radius: 10px;
+	border: #d0d0d0 1px solid;
+	margin: auto;
+	margin-top: 20px;
+}
+.controller navigator,.controller text{
+	float: left;
+	width: 33.3%;
+	text-align: center;
+	display: block;
+}
+.controller navigator:last-child{
+	float: right;
+}

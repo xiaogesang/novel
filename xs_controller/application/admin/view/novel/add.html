@@ -1,0 +1,97 @@
+{extend name="layout"}
+{block name="title"}
+添加小说讯息
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="label">
+                    <label>作品标题：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>作者：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="editor" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>所属分类：</label>
+                </div>
+                <div class="field">
+                    <select name="types" class="input w50">
+                        <option value="">请选择分类</option>
+                        {foreach $types as $key=>$val}
+                        <option value="{$val['id']}">{$val['name']}</option>
+                        {/foreach}
+                    </select>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>关键字：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="tags" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>评分：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="point" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>封面图片：</label>
+                </div>
+                <div class="field">
+                    <input type="file" readonly id="url1" name="cover" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>连载状态：</label>
+                </div>
+                <div class="field" style="padding-top:8px;">
+                    连载中 <input id="ishome" type="radio" value="1" name="novel_status" checked/>
+                    已完结 <input id="isvouch" type="radio" value="2" name="novel_status"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>作品简介：</label>
+                </div>
+                <div class="field">
+                    <textarea class="input" name="intro" style=" height:90px;"></textarea>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}

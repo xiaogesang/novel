@@ -1,0 +1,83 @@
+1、该版本集成了微信登录
+使用方法：
+private function wechant_login(){
+	$wchat = new Wechant();
+	$code = request()->param('code','');
+	 	$user = $wchat->getUserAccessUserInfo($code);
+	 	session('user_wechant',$user);
+	 	return $user;
+	// ["openid"] => string(28) "oRXKA1fF4sMdRTt3-S62ivrjokAI"
+	// ["nickname"] => string(6) "遇见"
+	// ["sex"] => int(1)
+	// ["language"] => string(5) "zh_CN"
+	// ["city"] => string(6) "桂林"
+	// ["province"] => string(6) "广西"
+	// ["country"] => string(6) "中国"
+	// ["headimgurl"] => string(134) "http://thirdwx.qlogo.cn/mmopen/vi_32/ibqxUXL4NJcvvUoD5vzgmXa2dfWicrlAVjYtU6wcxNGFEcSl8SM3ibImsfw9DjnmP3ediakjMIehKLicVN9iagQric1rw/132"
+	// ["privilege"] => array(0) {
+	// }
+}
+
+调用：
+$wechant_login = $this->wechant_login();
+此时，wechant可以获取到微信用户信息。
+
+2、该版本集成了微信支付
+使用方法：
+
+use wxpay\Wxpay;
+
+方法内：
+$pay = new Wxpay();
+$res = $pay->jsPay('商品名称','商品价格',url('notify','',false,true));
+$this->assign('jsApiParameters',$res['jsApiParameters']);
+
+前端：
+ function jsApiCall(data,id)
+            {
+                // data = JSON.parse(data);
+                WeixinJSBridge.invoke(
+                'getBrandWCPayRequest', jsApiParameters,
+                    function(res){
+                        WeixinJSBridge.log(res.err_msg);
+                        if (res.err_msg == 'get_brand_wcpay_request:ok') {
+                            alert('支付成功！');
+                            location = "";//回调支付成功的地址。
+                        }
+                        else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+                            alert('支付取消！');
+                        }
+                        else{
+                            alert("支付失败！");
+                        }
+
+                    }
+                );
+            }
+            function callpay()
+            {
+                if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                    }else if (document.attachEvent){
+                        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                    }
+                }else{
+                    jsApiCall(jsApiParameters);
+                }
+            }
+config内：配置
+
+3、修改了报错“未定义数组下表【0】”的错误。
+
+4、修改了原本的$this->success和$this->error，使其变成了弹窗。修改了404页面底部的有关tp框架的广告。
+
+5、证书放在extend的cert内
+
+6、优化了框架内原本分页方法不可带参数进行get分页的错误。
+
+7、修改了服务器配置相关信息，使其在centos7上lnmp整合包内能够顺利部署。
+
+
+2019-11-03

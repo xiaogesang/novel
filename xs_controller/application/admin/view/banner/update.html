@@ -1,0 +1,58 @@
+{extend name="layout"}
+{block name="title"}
+修改轮播图
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改轮播图</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="label">
+                    <label>图片：</label>
+                </div>
+                <div class="field">
+                    <input type="file" readonly id="url1" name="imgs" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""/>
+                    <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传" style="float:left;">
+                    <!--<div class="tipss">图片尺寸：500*500</div>-->
+                </div>
+                <div class="field"style="float:left;display: block;margin-left:10%;">
+                    <img src="{$data['imgs']}" alt="" >
+                    <!--<div class="tipss">图片尺寸：500*500</div>-->
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>所属小说：</label>
+                </div>
+                <div class="field">
+                    <select name="nid" class="input w50">
+                        <option value="">请选择分类</option>
+                        {foreach $novel_list as $key=>$val}
+                        <option {if $val['id']==$data['nid']} selected {/if} value="{$val['id']}">{$val['title']}</option>
+                        {/foreach}
+                    </select>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script>
+    $(function(){
+        $('#image1').on('click',function(){
+            $(this).prev().click();
+        });
+    });
+</script>
+{/block}

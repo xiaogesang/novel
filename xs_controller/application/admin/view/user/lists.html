@@ -1,0 +1,50 @@
+{extend name="layout"}
+{block name="title"}
+用户列表
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+        <ul class="search" style="padding-left:10px;">
+            <li></li>
+        </ul>
+    </div>
+    <table class="table table-hover text-center">
+        <tr>
+            <th width="100">ID</th>
+            <th>名称</th>
+            <th width="10%">注册时间</th>
+            <th width="310">操作</th>
+        </tr>
+        {foreach $lists as $key=>$val}
+        <tr>
+            <td><input type="text" name="sort[1]" value="{$val['id']}" style="width:50px; text-align:center; border:1px solid #ddd; padding:7px 0;"/></td>
+            <td>{$val['phone']}</td>
+            <td>{$val['add_time']}</td>
+            <td>
+                <div class="button-group"><a class="change button {if $val['status']==1} border-red {else} border-main {/if}" data-url="{:url('admin/user/change',['id'=>$val['id']])}" href="javascript:void(0)">{if $val['status']==1}禁用{else}解禁{/if}</a></div>
+            </td>
+        </tr>
+        {/foreach}
+        <tr>
+            <td colspan="8">
+                {$lists->render()}
+            </td>
+        </tr>
+    </table>
+</div>
+{/block}
+{block name="js"}
+<script>
+    $(function(){
+       $('a.change').on('click',function(){
+            var text = $(this).text();
+            if (confirm('确认'+text+'？')==true){
+                var url = $(this).data('url');
+                location = url;
+            }
+       });
+    });
+</script>
+{/block}

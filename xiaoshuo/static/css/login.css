@@ -1,0 +1,51 @@
+.body{
+	min-width: 100vw;
+	min-height: calc(100vh - 44px);
+	overflow: hidden;
+	background: url(../../static/images/login_bgx.gif);
+}
+.form{
+	background: white;
+	position: fixed;
+	width: 80vw;
+	left: calc(10vw - 10px);
+	top: 20%;
+	padding: 10px;
+	border-radius: 5px;
+}
+.form .title{
+	text-align: center;
+	margin: 20px;
+	font-size: 24px;
+}
+.form_item{
+	border-bottom: #e0e0e0 1px solid;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.form_item.no_border{
+	border: none;
+}
+.form_item input{
+	padding: 5px;
+}
+.form_item button{
+	border: none;
+	background: #1296DB;
+	color: white;
+	margin-top: 20px;
+	display: block;
+}
+.form .navicate{
+	display: block;
+	overflow: hidden;
+	margin-top: 60px;
+	color: #999;
+	margin-bottom: 20px;
+}
+.navicate navigator{
+	float: left;
+}
+.navicate navigator:last-child{
+	float: right;
+}

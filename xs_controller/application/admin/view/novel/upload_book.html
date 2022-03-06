@@ -1,0 +1,57 @@
+{extend name="layout"}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="label">
+                    <label>选择文件：</label>
+                </div>
+                <div class="field">
+                    <input type="file" class="input w50" name="books" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>文件名称（非中文）：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="file_name" data-validate="required:请输入标题"/>
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>章节数是否为数字：</label>
+                </div>
+                <div class="field" style="padding-top:8px;">
+                    是 <input id="ishome" name="book_type" value="1" type="radio"/>
+                    否 <input id="isvouch" name="book_type" checked="checked" value="2" type="radio"/>
+                    <div class="tips">  如果是“第一章”选否，如果是“第1章”选是</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>章节名称：</label>
+                </div>
+                <div class="field" style="padding-top:8px;">
+                    章 <input id="" name="title_type" value="1" type="radio"/>
+                    节 <input id="" name="title_type" checked="checked" value="2" type="radio"/>
+                    <div class="tips">  如果是“第一章”选否，如果是“第1章”选是</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}

@@ -1,0 +1,61 @@
+.body{
+	overflow: hidden;
+}
+.left_type{
+	width: 5rem;
+	display: block;
+	overflow: scroll;
+	float: left;
+	height: calc(100vh - 94px);
+	background: #f0f0f0;
+}
+.scroll_view{
+	width: calc(100% - 5rem);
+	float: right;
+	height: calc(100vh - 94px);
+}
+.type_item{
+	line-height: 3rem;
+	text-align: center;
+	font-size: 14px;
+}
+.type_item.on{
+	background: white;
+}
+ .book_info {
+	float: left;
+	width: calc(100% - 120px);
+	overflow: hidden;
+}
+
+.book_info text {
+	display: block;
+}
+
+.book_info .book_title {
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.book_info .book_intro {
+	font-size: 14px;
+	font-weight: normal;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	height: 3.5rem;
+	color: #999;
+}
+.top_book{
+	padding: 10px 0;
+	border-bottom: #e0e0e0 1px solid;
+	overflow: hidden;
+}
+.top_book image{
+	width: 80px;
+	float: left;
+	height: 100px;
+	margin: 10px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>{block name="title"}{/block}</title>
+    <link rel="stylesheet" href="__ROOT__/admin/css/pintuer.css">
+    <link rel="stylesheet" href="__ROOT__/admin/css/admin.css">
+    {block name="css"}{/block}
+    <script src="/admin/js/jquery.js"></script>
+    <link rel="stylesheet" href="__ROOT__/admin/js/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__ROOT__/admin/js/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__ROOT__/admin/js/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="__ROOT__/admin/js/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/admin/js/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+        KindEditor.ready(function(K) {
+            var editor1 = K.create('textarea[name="content"],textarea[name="introduction"],textarea[name="team"],textarea[name="dream"]', {
+                cssPath : '__ROOT__/admin/js/kindeditor/plugins/code/prettify.css',
+                uploadJson : '__ROOT__/admin/js/kindeditor/php/upload_json.php',
+                fileManagerJson : '__ROOT__/admin/js/kindeditor/php/file_manager_json.php',
+                allowFileManager : true,
+                afterCreate : function(){
+                    var self = this;
+                    K.ctrl(document, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+            prettyPrint();
+        });
+    </script>
+</head>
+<body style="background-color:#f2f9fd;">
+<div class="header bg-main">
+    <div class="logo margin-big-left fadein-top">
+        <h1><img src="__ROOT__/admin/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+    </div>
+    <div class="head-l"><a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href=""><span class="icon-power-off"></span> 退出登录</a> </div>
+</div>
+<div class="leftnav">
+    <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
+    <h2 {if $controller=="Admin"||$controller=="Banner"||$controller=="User"||$controller=="Apoint"||$controller=="Index"} class="on" {/if}><span class="icon-user"></span>基本设置</h2>
+    <ul {if $controller=="Admin"||$controller=="Banner"||$controller=="User"||$controller=="Apoint"||$controller=="Index"} style="display: block;" {/if}>
+        <li><a href="{:url('admin/admin/lists')}" {if $controller=="Admin"} class="on" {/if}><span class="icon-caret-right"></span>管理员设置</a></li>
+    </ul>
+    <h2 {if $controller=="Novel"||$controller=="Comment"} class="on" {/if}><span class="icon-user"></span>小说设置</h2>
+    <ul {if $controller=="Novel"||$controller=="Comment"} style="display: block;" {/if}>
+        <li><a href="{:url('admin/novel/types')}" {if $controller=="Novel"&&($action=='types'||$action=='addtype'||$action=='updatetype')} class="on" {/if}><span class="icon-caret-right"></span>小说分类设置</a></li>
+        <li><a href="{:url('admin/novel/lists')}" {if $controller=="Novel"&&($action!='types'&&$action!='addtype'&&$action!='updatetype')} class="on" {/if}><span class="icon-caret-right"></span>小说列表</a></li>
+        <li><a href="{:url('admin/comment/lists')}" {if $controller=="Comment"} class="on" {/if}><span class="icon-caret-right"></span>小说评论</a></li>
+
+    </ul>
+    <h2 {if $controller=="Banner"} class="on" {/if}><span class="icon-pencil-square-o"></span>广告管理</h2>
+    <ul {if $controller=="Banner"} style="display: block;" {/if}>
+        <li><a href="{:url('admin/banner/lists')}"  {if $controller=="Banner"} class="on" {/if}><span class="icon-caret-right"></span>轮播管理</a></li>
+    </ul>
+    <h2 {if $controller=="User"} class="on" {/if}><span class="icon-pencil-square-o"></span>用户管理</h2>
+    <ul {if $controller=="User"} style="display: block;" {/if}>
+        <li><a href="{:url('admin/User/lists')}" {if $controller=="User"&&$action!="feedback"} class="on" {/if}><span class="icon-caret-right"></span>用户列表</a></li>
+         <li><a href="{:url('admin/User/feedback')}" {if $controller=="User"&&$action=="feedback"} class="on" {/if}><span class="icon-caret-right"></span>用户反馈</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".leftnav h2").click(function(){
+            $(this).next().slideToggle(200);
+            $(this).toggleClass("on");
+        });
+        $(".leftnav ul li a").click(function(){
+            $("#a_leader_txt").text($(this).text());
+            $(".leftnav ul li a").removeClass("on");
+            $(this).addClass("on");
+        })
+    });
+</script>
+<div class="admin">
+{block name="content"}{/block}
+</div>
+{block name="js"}{/block}
+</body>
+</html>

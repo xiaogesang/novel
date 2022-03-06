@@ -1,0 +1,48 @@
+{extend name="layout"}
+{block name="title"}
+修改管理员
+{/block}
+{block name="content"}
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="">
+            <div class="form-group">
+                <div class="label">
+                    <label>管理员账号：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="{$data['user_name']}" name="user_name" data-validate="required:请输入标题" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>登录密码：</label>
+                </div>
+                <div class="field">
+                    <input type="password" class="input w50" value="" name="password" data-validate="required:请输入标题" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>确认密码：</label>
+                </div>
+                <div class="field">
+                    <input type="password" class="input w50" value="" name="password2" data-validate="required:请输入标题" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}

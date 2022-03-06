@@ -1,0 +1,56 @@
+.body{
+	overflow: hidden;
+}
+.novel_info{
+	display: block;
+	overflow: hidden;
+	padding: 20px;
+}
+.novel_info image{
+	width: 80px;
+	height: 100px;
+	display: block;
+	float: left;
+}
+.novel_info .book_info{
+	float: right;
+	width: calc(100% - 100px);
+} 
+.book_info .title{
+	font-weight: normal;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+	height: 1.2rem;
+}
+.book_info .intro{
+	font-weight: normal;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	height: 5rem;
+	font-size: 14px;
+	color: #999;
+	margin-top: 5px;
+}
+.form .textarea{
+	border: #e0e0e0 1px solid;
+	border-radius: 5px;
+	width: 90%;
+	display: block;
+	margin: auto;
+	padding: 5px;
+	font-size: 14px;
+}
+.form button{
+	display: block;
+	width: calc(90% + 10px);
+	margin-top: 20px;
+	border: none;
+	background: #1296DB;
+	color: white;
+	font-size: 14px;
+	line-height: 3rem;
+}

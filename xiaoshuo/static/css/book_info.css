@@ -1,0 +1,129 @@
+.body{
+	padding: 10px;
+}
+.book_image{
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: #d0d0d0 1px solid;
+}
+.book_image image{
+	width: 4.25rem;
+	height: 6rem;
+	float: left;
+}
+.book_image .infomation{
+	float: left;
+	margin-left: 20px;
+	width: calc(100% - 4.25rem - 20px);
+}
+.book_image .read_now{
+	display: block;
+	width: 100%;
+	background: #1296DB;
+	float: left;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 3rem;
+	color: white;
+	font-size: 18px;
+	font-weight: 900;
+	border-radius: 5px;
+}
+.book_image .comment{
+	display: block;
+	float: left;
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+	color: #1296DB;
+}
+.read_more navigator{
+	display: block;
+	line-height: 3rem;
+	text-align: center;
+	width: 100%;
+	color: #1296DB;
+}
+.infomation text{
+	display: block;
+	line-height: 1.4rem;
+	font-size: 14px;
+}
+.infomation .book_name{
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.5rem;
+}
+.book_intro{
+	font-size: 14px;
+	line-height: 1.5rem;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: #d0d0d0 1px solid;
+}
+.book_menuList{
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: #d0d0d0 1px solid;
+}
+.book_menuList .a{
+	overflow: hidden;
+}
+.a text{
+	float: left;
+	font-size: 16px;
+	font-weight: 800;
+}
+.a text:last-child{
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+}
+.reader_recom .reader_title{
+	font-size: 16px;
+	font-weight: 800;
+	margin-bottom: 20px;
+}
+.recom_item{
+	overflow: hidden;
+	padding: 10px;
+	border-bottom: #e0e0e0 1px solid;
+}
+.recom_item:last-child{
+	border: none;
+}
+.recom_item .reader{
+	width: 50px;
+	float: left;
+	overflow: hidden;
+}
+.reader image{
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: auto;
+}
+.reader text{
+	font-size: 12px;
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+.recom_content{
+	width: calc(100% - 80px);
+	float: right;
+}
+.time{
+	overflow: hidden;
+}
+.time text{
+	float: right;
+	font-size: 14px;
+	color: #999;
+	line-height: 1.6rem;
+}
+.editor,.size{
+	margin-top: 1px;
+}

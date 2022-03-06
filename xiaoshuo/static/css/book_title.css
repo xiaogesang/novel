@@ -1,0 +1,29 @@
+.novel_list{
+	overflow: hidden;
+}
+.list_item{
+	overflow: hidden;
+	padding: 1rem 10px;
+	border-bottom: #e0e0e0 1px solid;
+}
+.page_btn{
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.page_btn text{
+	display: block;
+	float: left;
+	border: #e0e0e0 1px solid;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-left: 10vw;
+}
+.page_btn text:last-child{
+	float: right;
+	margin-right: 10vw;
+}
+.page_btn .page_nums{
+	margin-left: 12vw;
+}
